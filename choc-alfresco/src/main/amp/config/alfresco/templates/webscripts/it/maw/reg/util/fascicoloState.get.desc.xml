@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>fascicoloState</shortname>
+	<description>Change the state of a fascicolo</description>
+	<url>/choc/reg/util/fascicoloState</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

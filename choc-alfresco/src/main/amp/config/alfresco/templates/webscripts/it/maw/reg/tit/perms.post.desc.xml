@@ -1,0 +1,9 @@
+<webscript>
+	<shortname>chocRegTitPerms</shortname>
+	<description>Set permission</description>
+	<url>/choc/reg/tit/perms</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+	<transaction>required</transaction>
+	<lifecycle>internal</lifecycle>
+</webscript>

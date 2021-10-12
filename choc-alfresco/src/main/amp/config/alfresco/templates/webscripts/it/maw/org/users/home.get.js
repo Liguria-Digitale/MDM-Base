@@ -1,0 +1,1 @@
+model.home = Packages.it.maw.choc.util.AooUtil.getUserHome(person.properties["cm:userName"], args.site);

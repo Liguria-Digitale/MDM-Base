@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>ticket</shortname>
+	<description>Create a ticket for capturing</description>
+	<url>/choc/scan/ticket</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

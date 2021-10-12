@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Audit Detail</shortname>
+  <description>Find audit detail for specified noderef</description>
+  <url>/choc/reg/audit/get</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+</webscript>

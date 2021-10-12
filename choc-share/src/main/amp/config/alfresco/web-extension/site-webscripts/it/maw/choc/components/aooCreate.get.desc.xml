@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Create AOO</shortname>
+  <description>Create site in alfresco and then create the preset in the web tier</description>
+  <format default="json"/>
+  <url>/choc/aoocreate</url>
+  <authentication>user</authentication>
+</webscript>

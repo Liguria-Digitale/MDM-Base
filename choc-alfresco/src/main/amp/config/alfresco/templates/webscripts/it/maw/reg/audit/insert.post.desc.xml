@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Insert Audit</shortname>
+  <description>Insert Audit</description>
+  <url>/choc/audit/insert</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+</webscript>

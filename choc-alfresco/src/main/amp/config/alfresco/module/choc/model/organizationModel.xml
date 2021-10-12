@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="org:model" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+	<description>Organization Company Model</description>
+	<author></author>
+	<version>1.0</version>
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+		<import uri="http://www.reg.it/model/tit/1.0" prefix="tit" />
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.org.it/model/org/1.0" prefix="org" />
+	</namespaces>
+
+	<types>
+		<!-- nodo base dell'organigramma -->
+		<type name="org:node">
+			<title>Nodo</title>
+			<parent>cm:folder</parent>
+		</type>
+		<!-- nodo uo dell'organigramma -->
+		<type name="org:nodeUo">
+			<title>UO</title>
+			<parent>org:node</parent>
+			<properties>
+				<property name="org:nodeUoLeader">
+					<title>Username del responsabile</title>
+					<type>d:text</type>
+				</property>
+				<property name="org:nodeUoDisabled">
+					<title>Uo disabilitata</title>
+					<type>d:boolean</type>
+					<default>false</default>
+				</property>
+			</properties>
+			<associations>
+				<association name="org:usersAssoc">
+					<title>Utenti</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</source>
+					<target>
+						<class>cm:person</class>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</target>
+				</association>
+			</associations>
+		</type>
+	</types>
+		
+	<aspects>
+		<!-- aspect for "db-cmis" language use -->
+		<aspect name="org:site">
+			<title>Sitename</title>
+			<properties>
+				<property name="org:siteName">
+					<title>sitename</title>
+					<type>d:text</type>
+				</property>
+			</properties>
+		</aspect>
+	 </aspects>
+	
+</model>

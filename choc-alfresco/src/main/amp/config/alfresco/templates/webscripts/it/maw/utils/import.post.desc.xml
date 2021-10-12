@@ -1,0 +1,9 @@
+<webscript>
+	<shortname>chocImport</shortname>
+	<description>chocImport</description>
+	<url>/choc/import</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+	<transaction>required</transaction>
+	<lifecycle>internal</lifecycle>
+</webscript>

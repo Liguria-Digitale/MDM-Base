@@ -1,0 +1,13 @@
+<% if(signature.length>0){ %>
+	<% for(var i in signature){ var detail = signature[i]; %>
+		<div class='ui blue header'><%= detail.subjectName %></div>
+		<b>Data firma:</b> <%= detail.signDate %><br/>
+		<% if(detail.subjectEmail){%>
+		<b>Email:</b> <%= detail.subjectEmail %><br/>
+		<% } %>
+		<b>Id firma:</b> <%= detail.signName %><br/><br/>
+		<b>Certificato emesso da:</b> <%= detail.certIssuer %><br/>
+		<b>Certificato valido dal</b> <%= detail.certDateNotBefore %> <b>al</b> <%= detail.certDateNotAfter %><br/>
+		<div class="ui divider"></div>
+	<% } %>
+<% } %>

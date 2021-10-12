@@ -1,0 +1,6 @@
+<webscript>
+  <shortname>.mDM Importer</shortname>
+  <description>Importazione massiva di documenti</description>
+  <url>/choc/imp/importer</url>
+  <family>admin-console</family>
+</webscript>

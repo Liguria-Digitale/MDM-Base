@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>inheritPerms</shortname>
+	<description>Set permission inheritance of node</description>
+	<url>/choc/reg/tit/inheritPerms</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

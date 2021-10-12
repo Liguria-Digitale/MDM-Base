@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>ocr</shortname>
+	<description>Create Ocr version of document</description>
+	<url>/choc/scan/ocr</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

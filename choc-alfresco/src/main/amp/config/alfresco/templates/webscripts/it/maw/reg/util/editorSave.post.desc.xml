@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Editor Save</shortname>
+  <description>Save content written with online editor</description>
+  <url>/choc/reg/util/editorsave</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+</webscript>

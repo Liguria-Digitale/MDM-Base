@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocRegTitParents</shortname>
+	<description>List parents of node</description>
+	<url>/choc/reg/tit/parents</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

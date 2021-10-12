@@ -1,0 +1,9 @@
+<webscript>
+  <shortname>Sign Details</shortname>
+  <description>Retrieves the sign details of a given node</description>
+  <url>/choc/sign/details</url>
+  <format default="json"/>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+  <lifecycle>internal</lifecycle>
+</webscript>

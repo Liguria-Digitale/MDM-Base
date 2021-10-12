@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUsersHome</shortname>
+	<description>chocOrgUsersHome</description>
+	<url>/choc/org/users/home</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

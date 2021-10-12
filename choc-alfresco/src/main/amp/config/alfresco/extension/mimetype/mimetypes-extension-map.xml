@@ -1,0 +1,17 @@
+<alfresco-config area="mimetype-map">
+
+    <config evaluator="string-compare" condition="Mimetype Map">
+        <mimetypes>
+            <mimetype mimetype="application/pkcs7-mime" display="P7M">
+                <extension default="true">p7m</extension>
+            </mimetype>
+            <mimetype mimetype="application/pkcs7-signature" display="P7S">
+                <extension default="true">p7s</extension>
+            </mimetype>
+            <mimetype mimetype="application/x-7z-compressed" display="7-Zip">
+                <extension default="true">7z</extension>
+            </mimetype>
+        </mimetypes>
+    </config>
+
+</alfresco-config>

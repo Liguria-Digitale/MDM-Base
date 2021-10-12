@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+    
+    <!-- Webscript for preview -->
+    <bean id="webscript.it.maw.picker.preview.get" class="it.maw.choc.ws.DocPreview" parent="webscript" />
+
+    
+    <!-- Webscript for importer -->
+    <bean id="webscript.it.maw.utils.import.post" class="it.maw.choc.ws.utils.ServerImporter" parent="webscript">
+    	<property name="importerFactory" ref="streamingNodeImporterFactory" />
+    	<property name="bulkImporter" ref="bulkFilesystemImporter" />
+    </bean>
+
+	<!-- webscript ocr -->
+	<bean id="webscript.it.maw.scan.ocr.get" class="it.maw.scan.webscripts.Ocr" parent="webscript" />
+	
+	<!-- webscript creazione ticket -->
+	<bean id="webscript.it.maw.scan.ticket.post" class="it.maw.scan.webscripts.CreateTicket" parent="webscript" />
+
+    <!-- Webscript for fascicolo status -->
+    <bean id="webscript.it.maw.reg.util.editorSave.post" class="it.maw.choc.ws.EditorSave" parent="webscript" />
+
+    <!-- webscript dettagli firma  -->
+    <bean id="webscript.it.maw.sign.details.get" class="it.maw.sign.webscript.SignDetails" parent="webscript" />
+
+    <!-- ############# AUDIT WS ############ -->
+    <!-- Webscript for insert audit -->
+    <bean id="webscript.it.maw.reg.audit.insert.post" class="it.maw.choc.ws.audit.InsertAudit" parent="webscript" />
+    
+</beans>

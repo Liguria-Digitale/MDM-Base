@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocGeneralGet</shortname>
+	<description>chocGeneralGet</description>
+	<url>/choc/picker/generalget</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

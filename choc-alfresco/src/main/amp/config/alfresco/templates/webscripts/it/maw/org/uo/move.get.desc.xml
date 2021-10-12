@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUoMove</shortname>
+	<description>chocOrgUoMove</description>
+	<url>/choc/org/uo/move</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

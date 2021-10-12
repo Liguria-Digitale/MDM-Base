@@ -1,0 +1,55 @@
+<div class="choc-service choc-service-user">
+	<div class="ui centered grid">
+		<div class="sixteen wide column">
+			<div class="ui grid">
+				<div class="sixteen wide column choc-service-header">
+					<i class="icon black remove" onclick="Choc.Picker.users.destroy();"></i>
+					<div class="ui header"><%== title || "Seleziona utenti o UO" %></div>
+				</div>
+				<div class="sixteen wide column choc-service-content">
+					<div class="ui divided grid">
+						<div class="eleven wide column" style="max-height: 80vh; overflow-y: auto">
+							<div class="choc-service-user-uos-container">
+								<div class="ui blue header">Seleziona UO...</div>
+								<div class="ui list">
+									<div class="ui checkbox choc-service-user-leader">
+										<input type="checkbox"><label>Seleziona solo il responsabile (se presente) dalle UO scelte</label>
+									</div>
+								</div>
+								<div class="ui search selection dropdown large fluid choc-service-user-uos">
+									<i class="dropdown icon"></i>
+									<div class="default text">Scegli un UO...</div>
+									<div class="menu"></div>
+								</div>
+								<div class="choc-service-user-uos-tree"></div>
+							</div>
+							<div class="ui blue header header-choc-service-user-search">...o seleziona utenti</div>
+							<div class="ui action input choc-service-user-search">
+								<input type="text" placeholder="Cerca utenti..." onkeydown='Choc.Picker.users.search(event);'>
+								<div onclick='Choc.Picker.users.search();' class="ui icon button"><i class="icon search"></i></div>
+							</div>
+							<div class="ui divided list choc-service-user-users"></div>
+							<div class="choc-service-user-lists">
+								<div class="ui blue header" >...o carica da una lista</div>
+								<div class="ui selection dropdown choc-service-user-lists-dd">
+									<div class="default text">Seleziona lista...</div>
+									<i class="icon dropdown"></i>
+									<div class="menu"></div>
+								</div>
+							</div>
+							<div class="ui hidden divider"></div>
+						</div>
+						<div class="five wide column">
+							<div class="ui blue header">Elementi selezionati</div>
+							<div class="ui list choc-service-user-selected"></div>
+						</div>
+					</div>
+				</div>
+				<div class="sixteen wide column choc-service-footer">
+					<div class="ui blue small button" onclick='Choc.Picker.users.ok();'>Conferma</div>
+					<div class="ui red small button" onclick='Choc.Picker.users.destroy();'>Annulla</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

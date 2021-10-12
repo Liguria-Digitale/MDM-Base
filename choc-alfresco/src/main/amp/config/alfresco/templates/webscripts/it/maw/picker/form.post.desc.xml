@@ -1,0 +1,9 @@
+<webscript>
+	<shortname>chocPickerForm</shortname>
+	<description>chocPickerForm</description>
+	<url>/choc/picker/form</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+	<transaction>requiresnew</transaction>
+	<lifecycle>internal</lifecycle>
+</webscript>

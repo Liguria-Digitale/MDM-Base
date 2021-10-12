@@ -1,0 +1,25 @@
+<extension>         
+	<modules>                
+		<module>        
+			<id>ChocLoginExtensions</id>
+			<auto-deploy>true</auto-deploy>
+			<customizations>            
+				<customization>                
+					<targetPackageRoot>org.alfresco.components.guest</targetPackageRoot>                
+					<sourcePackageRoot>it.maw.choc.extensions.guest</sourcePackageRoot>             
+				</customization>    	         
+			</customizations>
+		</module>
+		<module>
+			<id>ChocExtensions</id>
+			<auto-deploy>true</auto-deploy>
+			<evaluator type="site.module.evaluator">
+				<params>
+					<sitePresets>choc-site</sitePresets>
+					<sites>.*</sites>
+					<applyForNonSites>false</applyForNonSites>
+				</params>
+			</evaluator>
+		</module>
+	</modules>
+</extension>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>it.maw.ecm</groupId>
+    <artifactId>choc-share</artifactId>
+	<version>1.12.RIUSO-SNAPSHOT</version>
+    <packaging>jar</packaging>
+	<name>choc-share AMP project</name>
+    <description>Manages the lifecycle of the choc-share AMP (Alfresco Module Package)</description>
+
+    <properties>
+		<alfresco.sdk.version>3.0.1</alfresco.sdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<alfresco.groupId>org.alfresco</alfresco.groupId>
+		<alfresco.share.version>5.1.g</alfresco.share.version>
+		<maven.alfresco.edition>community</maven.alfresco.edition>
+		<env>local</env>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<alfresco.surf.version>6.11</alfresco.surf.version>
+		<maven.tomcat.port>8081</maven.tomcat.port>
+		<choc.version.amp>1.12.RIUSO</choc.version.amp>
+		<maw.repo>http://maven.mawgroup.it/nexus/content</maw.repo>
+		<maw.repo.id>maw-repo</maw.repo.id>
+    </properties>
+   
+    <dependencies>
+		<!-- Following dependencies are needed for compiling Java code in src/main/java -->
+		<dependency>
+			<groupId>${alfresco.groupId}</groupId>
+			<artifactId>share</artifactId>
+			<version>${alfresco.share.version}</version>
+			<classifier>classes</classifier>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.alfresco.surf</groupId>
+			<artifactId>spring-surf-api</artifactId>
+			<version>${alfresco.surf.version}</version>
+			<scope>provided</scope>
+		</dependency>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency> <!-- TODO  DIFFERENT FOR EVERY VERSION -->
+			<groupId>org.springframework.extensions.surf</groupId>
+			<artifactId>spring-surf</artifactId>
+			<version>1.2.0-M23</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Logger per Choc-Share - http://logback.qos.ch/ -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.8</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>	
+    </dependencies>
+
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<configuration>
+							<tasks>
+								<!-- copy all web files -->
+								<copy todir="${project.build.directory}/web">
+									<fileset dir="src/main/amp/web/choc" />
+								</copy>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>yuicompressor-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<sourceDirectory>${project.build.directory}/web</sourceDirectory>
+					<outputDirectory>${project.build.directory}/web</outputDirectory>
+					<nomunge>true</nomunge>
+					<nosuffix>true</nosuffix>
+					<jswarn>false</jswarn>
+					<excludes>
+						<exclude>**/pdf.js</exclude>
+						<exclude>**/pdf.worker.js</exclude>
+						<exclude>**/tinymce/**</exclude>
+						<exclude>**/*.min.css</exclude>
+						<exclude>**/*.min.js</exclude>
+						<exclude>**/*-min.js</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<nonFilteredFileExtensions> <!-- jpg, jpeg, gif, bmp and png are added automatically -->
+						<nonFilteredFileExtension>ftl</nonFilteredFileExtension>
+						<nonFilteredFileExtension>acp</nonFilteredFileExtension>
+						<nonFilteredFileExtension>svg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>doc</nonFilteredFileExtension>
+						<nonFilteredFileExtension>docx</nonFilteredFileExtension>
+						<nonFilteredFileExtension>xls</nonFilteredFileExtension>
+						<nonFilteredFileExtension>xlsx</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ppt</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pptx</nonFilteredFileExtension>
+						<nonFilteredFileExtension>bin</nonFilteredFileExtension>
+						<nonFilteredFileExtension>lic</nonFilteredFileExtension>
+						<nonFilteredFileExtension>swf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>zip</nonFilteredFileExtension>
+						<nonFilteredFileExtension>msg</nonFilteredFileExtension>
+						<nonFilteredFileExtension>jar</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>eot</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+						<nonFilteredFileExtension>css</nonFilteredFileExtension>
+						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+						<nonFilteredFileExtension>psd</nonFilteredFileExtension>
+						<nonFilteredFileExtension>js</nonFilteredFileExtension>
+						<!-- CUSTOM -->
+						<nonFilteredFileExtension>dll</nonFilteredFileExtension>
+						<nonFilteredFileExtension>class</nonFilteredFileExtension>
+						<nonFilteredFileExtension>otf</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>build-amp-file</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptor>src/main/assembly/amp.xml</descriptor>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.alfresco.maven.plugin</groupId>
+						<artifactId>alfresco-maven-plugin</artifactId>
+						<version>${alfresco.sdk.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!--
+        Alfresco Maven Repositories
+        -->
+	<repositories>
+		<repository>
+			<id>alfresco-public</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>alfresco-public-snapshots</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</repository>
+		<!-- Alfresco Enterprise Edition Artifacts, put username/pwd for server in settings.xml -->
+		<repository>
+			<id>alfresco-private-repository</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/private</url>
+		</repository>
+		<repository>
+			<id>maw-repo-public</id>
+			<name>Maw maven repository</name>
+			<url>http://maven.mawgroup.it/nexus/content/groups/public</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>alfresco-plugin-public</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>alfresco-plugin-public-snapshots</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+    
+    <profiles>	
+
+	<!-- ======================= -->
+	<!-- BUILD FOR ALFRESCO 6.2  -->
+	<!-- ======================= -->
+	<!-- Use this profile to build source and ensure compatibility with Alfresco 6.2 -->
+	<profile>
+		<id>env-alfresco-6.2</id>
+		<properties>
+			<alfresco.share.version>6.2.0</alfresco.share.version>
+		</properties>
+		<dependencies>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.24</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</profile>
+
+	<!-- ======================= -->
+	<!-- BUILD FOR ALFRESCO 5.2E  -->
+	<!-- ======================= -->
+	<!-- Use this profile to build source and ensure compatibility with Alfresco 5.2E -->
+	<profile>
+		<id>env-alfresco-5.2E</id>
+		<properties>
+			<alfresco.share.version>5.2.6</alfresco.share.version>
+		</properties>
+		<dependencies>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.21</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- Javascript console -->
+			<dependency>
+				<groupId>de.fme.jconsole</groupId>
+				<artifactId>javascript-console-share</artifactId>
+				<version>0.5.1</version>
+			</dependency>
+		</dependencies>
+	</profile>
+
+	<!-- ======================= -->
+	<!-- BUILD FOR ALFRESCO 5.2  -->
+	<!-- ======================= -->
+	<!-- Use this profile to build source and ensure compatibility with Alfresco 5.2 -->
+	<profile>
+		<id>env-alfresco-5.2</id>
+		<properties>
+			<alfresco.share.version>5.2.f</alfresco.share.version>
+		</properties>
+		<dependencies>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.21</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- Javascript console -->
+			<dependency>
+				<groupId>de.fme.jconsole</groupId>
+				<artifactId>javascript-console-share</artifactId>
+				<version>0.5.1</version>
+			</dependency>
+		</dependencies>
+	</profile>
+
+  </profiles>
+</project>

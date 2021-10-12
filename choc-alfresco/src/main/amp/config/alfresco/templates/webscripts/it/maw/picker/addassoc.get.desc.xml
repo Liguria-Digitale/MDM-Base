@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocAddAssociation</shortname>
+	<description>chocAddAssociation</description>
+	<url>/choc/addassociation</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

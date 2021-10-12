@@ -1,0 +1,62 @@
+<div class="choc-service choc-service-preview">
+	<div class="ui centered grid">
+		<div class="fifteen wide computer sixteen wide tablet column">
+			<div class="ui grid">
+				<div class="sixteen wide column choc-service-header">
+					<i class="icon black remove" onclick="Choc.Picker.preview.destroy();"></i>
+					<div class="ui header choc-service-preview-name"></div>
+				</div>
+				<div class="sixteen wide column choc-service-content">
+					<div class="ui divided horizontal list">
+						<div class="item ui small header choc-service-preview-page"></div>
+						<div class="item">Pag:
+							<div class="ui mini action input">
+								<input type="text" class="choc-service-preview-numpage">
+								<div class="ui icon button" onclick="Choc.Picker.preview.gotoPage();"><i class="icon play"></i></div>
+							</div>
+						</div>
+						<div class="item">
+							<div onclick="Choc.Picker.preview.prev();" class="ui tiny icon button">
+								<i class="icon chevron left"></i>
+							</div>
+							<div onclick="Choc.Picker.preview.next();" class="ui tiny icon button">
+								<i class="icon chevron right"></i>
+							</div>
+						</div>
+						<div class="item">
+							<div onclick="Choc.Picker.preview.dezoom();" class="ui tiny icon button">
+								<i class="icon minus"></i>
+							</div>
+							<div onclick="Choc.Picker.preview.zoom();" class="ui tiny icon button">
+								<i class="icon plus"></i>
+							</div>
+						</div>
+						<div class="item downprintbrows">
+							<div onclick="Choc.Actions.runAction('download', Choc.Picker.preview.noderef);" title="Download" class="ui tiny icon blue button">
+								<i class="icon download"></i>
+							</div>
+							<div onclick="Choc.Docs.Actions.browserView(Choc.Picker.preview.noderef);" title="Vedi nel browser" class="ui tiny icon blue button">
+								<i class="icon eye"></i>
+							</div>
+							<div onclick="Choc.Docs.Actions.print(Choc.Picker.preview.noderef);" title="Stampa" class="ui tiny icon blue button">
+								<i class="icon print"></i>
+							</div>
+						</div>
+						<div class="hide item choc-service-preview-signdetails">
+							<div onclick="Choc.Picker.preview.getSignDetails();" class="ui tiny icon button">
+								Dettagli firma <i class="icon write"></i>
+							</div>
+						</div>
+					</div>
+					<div class="choc-service-preview-body">
+						<canvas class="choc-service-preview-canvas">
+						</canvas>
+					</div>
+				</div>
+				<div class="sixteen wide column choc-service-footer">
+					<div class="ui blue button" onclick='Choc.Picker.preview.destroy();'>Chiudi</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

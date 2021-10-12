@@ -1,0 +1,7 @@
+<webscript>
+  <shortname>Search Audit</shortname>
+  <description>Search audit</description>
+  <url>/choc/reg/audit/search</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+</webscript>

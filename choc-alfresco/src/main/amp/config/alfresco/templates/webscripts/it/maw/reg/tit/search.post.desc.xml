@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocRegTitSearch</shortname>
+	<description>Search in folder</description>
+	<url>/choc/reg/tit/search</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

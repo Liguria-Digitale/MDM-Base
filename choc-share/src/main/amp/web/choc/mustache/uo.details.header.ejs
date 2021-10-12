@@ -1,0 +1,26 @@
+<% var mainUo = uo.name === Choc.Org.getUo(Choc.Org.rootUo).name; %>
+
+<div class="ui header"><i class='sitemap icon' style="font-size: 1em; vertical-align: inherit"></i><%= uo.name %>
+    <% if (uo.disabled){ %>
+    (Disabilitata)
+    <% } %>
+</div>
+<div class="ui secondary pointing menu choc-service-uo-details" style="border: none; margin-top: 5px">
+    <a data-value="users" onclick="Choc.Picker.code.picker._selectUoDetailTab(this)" class="item active">Utenti</a>
+    <% if (!mainUo){ %>
+    <div class="right item" style="padding-right: 0">
+        <div class="ui blue tiny button" onclick='Choc._renameUO()' style="margin-left: 8px">
+            <i class="icon font"></i>Rinomina
+        </div>
+        <% if (!uo.disabled){ %>
+        <div class="ui red tiny button" onclick='Choc._disableUO(this)' style="margin-left: 8px">
+            <i class="icon toggle on"></i>Disabilita
+        </div>
+        <% }else{ %>
+        <div class="ui blue tiny button" onclick='Choc._disableUO(this)' style="margin-left: 8px">
+            <i class="icon toggle off"></i>Abilita
+        </div>
+        <% } %>
+    </div>
+    <% } %>
+</div>

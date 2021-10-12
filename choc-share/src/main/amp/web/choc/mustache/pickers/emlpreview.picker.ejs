@@ -1,0 +1,39 @@
+<div class="choc-service choc-service-emlpreview">
+    <div class="ui centered grid">
+        <div class="fifteen wide computer sixteen wide tablet column">
+            <div class="ui grid">
+                <div class="sixteen wide column choc-service-header">
+                    <i class="icon black remove" onclick="Choc.Picker.emlpreview.destroy();"></i>
+                    <i title="Stampa" onclick="Choc.Pec.print(Choc.Picker.emlpreview.noderef);" class="icon print downprintbrows"></i>
+                    <i title="Download" onclick="Choc.Actions.runAction('download', Choc.Picker.emlpreview.noderef);" class="icon download downprintbrows"></i>
+                    <div class="ui header choc-service-emlpreview-header"></div>
+                </div>
+                <div class="sixteen wide column choc-service-content" style="background-color: #fff">
+                    <div class="ui list choc-service-emlpreview-subheader">
+                        <div class="item">
+                            <i class="icon user"></i>
+                            <div class="content"></div>
+                        </div>
+                        <div class="item">
+                            <i class="icon envelope"></i>
+                            <div class="content"></div>
+                        </div>
+                        <div class="item">
+                            <i class="icon calendar"></i>
+                            <div class="content"></div>
+                        </div>
+                    </div>
+                    <div class="ui horizontal divider">Allegati</div>
+                    <div class="ui horizontal list choc-service-emlpreview-attachs"></div>
+                    <div class="ui divider"></div>
+                    <div class="choc-service-emlpreview-body"></div>
+                </div>
+                <div class="sixteen wide column choc-service-footer">
+                    <div class="ui blue button downprintbrows" onclick="Choc.Actions.runAction('download', Choc.Picker.emlpreview.noderef);"><i class="icon download"></i>Download</div>
+                    <div class="ui blue button downprintbrows" onclick='Choc.Pec.print(Choc.Picker.emlpreview.noderef);'><i class="icon print"></i>Stampa</div>
+                    <div class="ui red button" onclick='Choc.Picker.emlpreview.destroy();'>Chiudi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

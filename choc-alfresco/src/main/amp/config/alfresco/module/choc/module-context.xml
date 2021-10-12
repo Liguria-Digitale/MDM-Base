@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="choc.model.dictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap,workflowBootstrap">
+        <property name="models">
+            <list>
+                <!-- titolario model -->
+                <value>alfresco/module/choc/model/titolarioModel.xml</value>
+                <!-- audit model -->
+                <value>alfresco/module/choc/model/auditModel.xml</value>
+                <!-- aoo organization model -->
+                <value>alfresco/module/choc/model/organizationModel.xml</value>
+                <!-- doc model -->
+                <value>alfresco/module/choc/model/docsModel.xml</value>
+                <!-- sign model -->
+                <value>alfresco/module/choc/model/signModel.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- inject service registry and policy component -->
+    <bean id="choc.model.registryBootstrap" class="it.maw.choc.model.ChocModel">
+        <property name="serviceRegistry" ref="ServiceRegistry" />
+        <property name="policyComponent" ref="policyComponent" />
+        <property name="appUtils" ref="applicationScriptUtils" />
+    </bean>
+
+
+    <!-- Webscripts -->
+    <import resource="classpath:alfresco/module/choc/webscript-context.xml"/>
+    
+    <!-- Behaviours -->
+    <!-- permissions behaviour -->
+    <bean id="behaviour.it.maw.permissions" class="it.maw.choc.beha.tit.Permissions" init-method="init" />
+
+</beans>    

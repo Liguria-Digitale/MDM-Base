@@ -1,0 +1,39 @@
+<div class="choc-service choc-service-perms">
+	<div class="ui centered grid">
+		<div class="height wide column">
+			<div class="ui grid">
+				<div class="sixteen wide column choc-service-header">
+					<i class="icon black remove" onclick="Choc.Picker.perms.destroy();"></i>
+					<div class="ui header">Permessi</div>
+				</div>
+				<div class="sixteen wide column choc-service-content">
+					<button type="button" class="ui small button" onclick='Choc.Picker.perms.add();'><i class="icon users"></i>Aggiungi Utente/Uo</button>
+					<button type="button" class="ui small green button choc-service-perms-inheritOn" onclick='Choc.Picker.perms.inherit(true);'><i class="icon check"></i>Eredita permessi</button>
+					<button type="button" class="ui small red button choc-service-perms-inheritOff" onclick='Choc.Picker.perms.inherit(false);'><i class="icon remove"></i>Non ereditare permessi</button>
+					<table class="ui table choc-service-perms-inherited">
+						<thead>
+						<tr>
+							<th>Permessi Ereditati</th>
+							<th>Livello</th>
+						</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<table class="ui table choc-service-perms-perms">
+						<thead>
+						<tr>
+							<th>Permessi Diretti</th>
+							<th>Livello</th>
+						</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+				<div class="sixteen wide column choc-service-footer">
+					<div class="ui blue small button" onclick='Choc.Picker.perms.ok();'>Conferma</div>
+					<div class="ui red small button" onclick='Choc.Picker.perms.destroy();'>Annulla</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

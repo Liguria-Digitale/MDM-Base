@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUoAdduser</shortname>
+	<description>chocOrgUoAdduser</description>
+	<url>/choc/org/uo/adduser</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

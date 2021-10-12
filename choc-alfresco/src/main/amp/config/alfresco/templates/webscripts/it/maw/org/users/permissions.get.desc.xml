@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUsersPermissions</shortname>
+	<description>chocOrgUsersPermissions</description>
+	<url>/choc/org/users/permissions</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

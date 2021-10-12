@@ -1,0 +1,53 @@
+<div class="choc-service choc-service-doclib">
+	<div class="ui centered grid">
+		<div class="sixteen wide column">
+			<div class="ui grid">
+				<div class="sixteen wide column choc-service-header" style="padding-bottom: 0">
+					<i class="icon black remove" onclick="Choc.Picker.doclib.destroy();"></i>
+					<div class="ui header"><%== title || "Seleziona documento o cartella" %></div>
+					<div class="ui secondary pointing menu choc-service-doclib-archives" style="border: none; margin-top: 5px">
+						<a data-value="doclib" onclick="Choc.Picker.doclib.chooseArchive('doclib')" class="item">Titolario</a>
+						<a data-value="user" onclick="Choc.Picker.doclib.chooseArchive('user')" class="item">Personali</a>
+						<a data-value="shared" onclick="Choc.Picker.doclib.chooseArchive('shared')" class="item">Condivisi</a>
+						<div class="right item" style="padding-right: 0">
+							<div class="ui right labeled icon dropdown tiny button choc-service-doclib-upload">
+								<div class="text">Carica</div>
+								<i class="dropdown icon"></i>
+								<div class="menu">
+									<div class="item choc-service-doclib-upli" onclick="$('#choc-services').find('.choc-service').last().find('.fileupload').click();"><i class="icon file"></i>Da File</div>
+								</div>
+							</div>
+							<input class="hide fileupload" type="file" name="filedata" multiple aria-label="Upload">
+							<div class="ui blue tiny button choc-service-doclib-nuova-voce-titolario" onclick='Choc.Picker.doclib.classificazioneCreateVoce();' style="margin-left: 8px">
+								<i class="icon folder"></i>Nuova Voce Titolario
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sixteen wide column choc-service-content">
+					<div class="ui divided grid">
+						<div class="eleven wide column">
+							<div class="ui icon small input" style="margin-right: 8px;">
+								<input type="text" placeholder="Filtra per nome..." aria-label="Filtra" class="choc-service-doclib-pattern">
+								<i class="search icon cursor pointer" onclick="Choc.Picker.doclib.refresh()"></i>
+							</div>
+							<div class="ui horizontal divided list choc-service-doclib-parent">
+							</div>
+							<div class="ui divided relaxed list choc-service-doclib-archive" style="max-height: 60vh; overflow-y: auto">
+							</div>
+							<div class="choc-service-doclib-pagination2"><div class="pager"></div></div>
+						</div>
+						<div class="five wide column">
+							<div class="ui header" style="margin: inherit">Elementi selezionati</div>
+							<div class="ui list choc-service-doclib-selected"></div>
+						</div>
+					</div>
+				</div>
+				<div class="sixteen wide column choc-service-footer">
+					<div class="ui blue small button" onclick='Choc.Picker.doclib.ok();'>Conferma</div>
+					<div class="ui red small button" onclick='Choc.Picker.doclib.destroy(true);'>Annulla</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

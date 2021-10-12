@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocPickerPreview</shortname>
+	<description>chocPickerPreview</description>
+	<url>/choc/picker/preview</url>
+	<format default="html">argument</format>
+	<authentication>user</authentication>
+</webscript>

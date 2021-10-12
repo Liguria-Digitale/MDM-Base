@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>choc-audit</shortname>
+  <description>Audit</description>
+  <url>/choc/page/audit</url>
+</webscript>

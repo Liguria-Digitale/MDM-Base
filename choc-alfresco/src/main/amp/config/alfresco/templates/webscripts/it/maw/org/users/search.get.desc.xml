@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUsersSearch</shortname>
+	<description>chocOrgUsersSearch</description>
+	<url>/choc/org/users/search</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

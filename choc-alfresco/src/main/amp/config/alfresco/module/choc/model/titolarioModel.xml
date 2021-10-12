@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="tit:model" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+	<description>titolario model</description>
+	<author>Federico Tarantino</author>
+	<version>1.0</version>
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"></import>
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"></import>
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.reg.it/model/tit/1.0" prefix="tit"></namespace>
+	</namespaces>
+	
+	<types>
+	
+		<type name="tit:baseFolder">
+			<title>Titolario base</title>
+			<parent>cm:folder</parent>
+			<properties>
+				<property name="tit:baseFolderNumber">
+					<title>Numero</title>
+					<type>d:int</type>
+				</property>
+				<property name="tit:baseCounter">
+					<title>Contatore gerarchia</title>
+					<type>d:text</type>
+					<default>2000-0</default>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="tit:titolo">
+			<title>Titolo</title>
+			<parent>tit:baseFolder</parent>
+			<properties>
+				<property name="tit:titoloNumeroRomano">
+					<title>Numerazione</title>
+					<type>d:text</type>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="tit:classe">
+			<title>Classe</title>
+			<parent>tit:baseFolder</parent>
+			<properties>
+				<!-- @Deprecated -->
+				<property name="tit:classeCounter">
+					<title>Ultimo fascicolo</title>
+					<type>d:text</type>
+					<default>2000-0</default>
+				</property>
+			</properties>
+		</type>
+		
+		<type name="tit:fascicolo">
+			<title>Fascicolo</title>
+			<parent>tit:baseFolder</parent>
+			<properties>
+				<property name="tit:fascicoloTipo">
+					<title>Tipo</title>
+					<type>d:text</type>
+				</property>
+				<!-- @Deprecated -->
+				<property name="tit:fascicoloDurata">
+					<title>Durata</title>
+					<type>d:text</type>
+				</property>
+				<property name="tit:fascicoloStato">
+					<title>Stato</title>
+					<type>d:text</type>
+					<default>aperto</default>
+				</property>
+				<property name="tit:fascicoloUfficio">
+					<title>Ufficio</title>
+					<type>d:text</type>
+				</property>
+				<property name="tit:fascicoloDataChiusura">
+					<title>Data Chiusura</title>
+					<type>d:date</type>
+				</property>
+				<property name="tit:fascicoloAnnuale">
+					<title>Annuale</title>
+					<type>d:boolean</type>
+					<default>false</default>
+				</property>
+				<property name="tit:fascicoloNote">
+					<title>Note</title>
+					<type>d:text</type>
+				</property>
+			</properties>
+		</type>
+	</types>
+</model>

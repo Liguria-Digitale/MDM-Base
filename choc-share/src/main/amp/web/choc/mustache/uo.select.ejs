@@ -1,0 +1,82 @@
+<div class="eight wide column">
+	<div class="ui basic segment">
+		<div class="ui blue header">Elementi selezionati</div>
+		<div class="ui list" id="choc-uo-select-selected"></div>
+		<div class="ui hidden divider"></div>
+		<div id="choc-uo-select-uos-container">
+			<div class="ui blue header">Seleziona UO...</div>
+			<div class="ui search selection large fluid dropdown" id="choc-uo-select-uos">
+				<i class="dropdown icon"></i>
+				<div class="default text">Scegli un UO...</div>
+				<div class="menu"></div>
+			</div>
+			<div id="choc-uo-select-uos-tree"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// function for retrieve uos
+	Choc._caricaUos = function(config){
+		var uos = $("#choc-uo-select-uos");
+		var selected =  $("#choc-uo-select-selected");
+		selected.html("<div class='toremove item'>Nessun contatto selezionato</div>");
+		if(uos.data().moduleDropdown){
+			uos.dropdown("restore defaults");
+			uos.dropdown("clear");
+		} else {
+			Choc.Org.getUos(function(res){
+                // init tree
+                new Choc.Org.Chart({
+                    container: "#choc-uo-select-uos-tree",
+                    select: Choc._selectUos
+                });
+                // init dropdown
+				var onChange = "";
+                if (Choc.Picker.uos.multiple){
+                        onChange =  Choc._selectUos;
+                } else{
+                        onChange = Choc._selectSingleUo;
+                }
+
+				Choc.Picker.drawUos(res, uos, onChange);
+			});
+		}
+			
+	}
+		
+	// function on select uo from select
+	Choc._selectUos = function(uo){
+		var selected =  $("#choc-uo-select-selected");
+		if(uo){
+			var uoObj = Choc.Org.getUo(uo);
+			if(selected.find("[data-uo='"+uo+"']").length==0){
+				selected.find(".toremove").remove();
+				var html = "<div class='item' data-uo='"+uo+"'><div class='ui blue label'><i class='icon sitemap'></i>"+uoObj.name;
+				html += "<i class='icon delete' onclick='$(this).parent().parent().remove();'></i></div></div>";
+				selected.append(html);
+			}
+
+		}
+	}
+	
+	Choc._selectSingleUo = function(uo){
+		var selected =  $("#choc-uo-select-selected");
+		if(uo){
+			var uoObj = Choc.Org.getUo(uo);
+			if(selected.find("[data-uo='"+uo+"']").length==0){
+				selected.empty();
+				var html = "<div class='item' data-uo='"+uo+"'><div class='ui blue label'><i class='icon sitemap'></i>"+uoObj.name;
+				html += "<i class='icon delete' onclick='$(this).parent().parent().remove();'></i></div></div>";
+				selected.append(html);
+			}
+
+		}
+	}
+	
+	$(document).ready(function()
+	{
+		Choc._caricaUos();
+	})
+			
+</script>

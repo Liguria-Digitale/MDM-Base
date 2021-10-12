@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUoList</shortname>
+	<description>chocOrgUoList</description>
+	<url>/choc/org/uo/list</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

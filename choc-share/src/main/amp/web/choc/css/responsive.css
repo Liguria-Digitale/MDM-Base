@@ -1,0 +1,53 @@
+/* Tablet Landscape */
+@media only screen and (max-width: 1024px) {
+	/* fix ios bug */
+	html.ios, html.ios body {
+		height: 100% !important;
+	}
+	body {
+		font-size: 13px;
+	}
+	.choc-org #org-uo-users > .item {
+		margin-left: 0;
+	}
+	.choc-audit #audit-filter {
+		width: 60%;
+	}
+	.choc-titolario #tit-advsearch-q {
+		width: 50%;
+	}
+	.choc-rubrica #adb-list .card {
+		font-size: 0.85rem;
+	}
+	.choc-rubrica #letters-list {
+		font-size: 0.77rem;
+	}
+	.choc-mail #pec-mail-list, .choc-mail #pec-mail-body {
+		margin-top: 46px;
+	}
+	.choc-mail #pec-list td.right {
+		display: none;
+	}
+	.choc-mail #mail-actions .menu .item .icon {
+		display: none;
+	}
+	#choc-topmenu .large_logo_item {
+		width: auto;
+	}
+	#choc-topmenu .choc-sitemenu-header {
+		margin-left: 15px;
+	}
+}
+
+/* Tablet Portrait (devices and browsers) */
+@media only screen and (max-width: 767px) {
+	.choc-service > .ui.grid > .right.floated.column {
+		width: 85% !important;
+	}
+	.choc-mail #mail-actions .menu:last-child {
+		margin-top:5px;
+	}
+	#choc-topmenu .choc-sitemenu-header {
+		display: none;
+	}
+}

@@ -1,0 +1,38 @@
+<% if(total > elements){ %>
+<div class="ui basic segment center aligned" style="padding: 0.7em 1em;">
+    <div class="ui labels <%= small ? "tiny " : "" %>paginator">
+        <% var realPage = ((total / elements) % 1 != 0) ? Math.floor(total / elements) + 1 : total / elements; %>
+        <% if(page != 0){ %>
+        <a class="ui blue small label number-action" data-page="0"><i class="step backward icon"></i></a>
+        <a class="ui grey small label prev-action"> &lt; </a>
+        <% }
+        var i = page < 3 ? 0 : page - 2, limit = i + Math.min(realPage, 5);
+        for(i; i < limit; i++) {
+
+        if(i == page){ %>
+        <!--currentPage-->
+        <a class="ui small blue label number-action" data-page="<%= i %>"> <%= i + 1 %> </a>
+        <% }else{
+        if(i < page){ %>
+        <!--previous-->
+        <a class="ui small label number-action" data-page="<%= i %>"> <%= i + 1 %> </a>
+        <% }else if(total > (i) * elements){ %>
+        <!--next-->
+        <a class="ui small label number-action" data-page="<%= i %>"> <%= i + 1 %> </a>
+        <% }
+        }
+        }
+        if(realPage > (page + 1)){ %>
+        <a class="ui grey small label next-action"> &gt; </a>
+        <% } %>
+        <a> <i class="circular search icon blue inverted goto"></i> </a> 
+		<div class="ui label">tot: <%= total %></div>
+    </div>
+    <div class="ui labeled input hide pageLauncher">
+        <% var randName = Math.random().toString(36).substr(2,6) %>
+        <label class="ui label" for="<%= randName%>">Pag.</label>
+        <input type="number" class="choosePag" placeholder="Numero pagina" min="1" value="<%= page+1 %>" id="<%= randName%>" />
+        <div class="ui small blue button goto-action"> Vai <i class=" ui icon right arrow"></i></div>
+    </div>
+</div>
+<% } %>

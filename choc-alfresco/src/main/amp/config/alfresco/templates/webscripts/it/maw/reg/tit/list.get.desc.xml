@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocRegTitList</shortname>
+	<description>List childrean of folder</description>
+	<url>/choc/reg/tit/list</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

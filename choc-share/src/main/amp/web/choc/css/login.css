@@ -1,0 +1,88 @@
+.input,
+.sticky-wrapper input[type="text"],
+.sticky-wrapper input[type="password"],
+.sticky-wrapper textarea,
+.sticky-wrapper select,
+.yui-overlay input[type="text"],
+.yui-overlay input[type="password"],
+.yui-overlay textarea,
+.yui-overlay select,
+.form-element-border,
+.share-form .yui-dt table {
+	background-color:#fff;
+	border:1px solid #c2c2c2;
+	padding:10px;
+	margin:0;
+	width:338px;
+}
+
+.sticky-wrapper, .sticky-footer, .yui-overlay, #lightbox, #ygddfdiv {
+	font-size:100%;
+}
+
+.alfresco-guest .theme-overlay {
+	border: 0;
+	background-color: #f5f5f5;
+	width:360px;
+	margin:0;
+	box-shadow: none;
+}
+
+.theme-company-logo {
+	height: 174px;
+	width: 362px;
+	background-image: url(../../../res/choc/images/logo_mdm_login.png) !important;
+	margin: -100px 0 10px -10px;
+	background-size: auto;
+}
+
+.product-name {
+	display: none;
+}
+
+.product-community {
+	display: none;
+}
+
+.form-fields.login .form-field > span.yui-button {
+	border-color: #000 !important;
+	margin:0 !important;
+	border:0 !important;
+}
+
+.form-fields.login .form-field > span.yui-button > .first-child,
+.form-fields.login .form-field > input[type='submit'] {
+	background-color:#000 !important;
+	color:#fff !important;
+	margin:0 !important;
+	padding:0 !important;
+	border:0 !important;
+}
+
+.form-fields.login .form-field > span.yui-button > .first-child > button,
+.form-fields.login .form-field > input[type='submit'] {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 336px;
+}
+
+.form-fields.login .form-field > input[type='submit'] {
+	height: 23px;
+    width: 50px;
+}
+
+.login input[type="text"], .login input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	outline: none;
+	font-size: 90%;
+	width: 316px;
+}
+
+.login-copy {
+   color: #333;
+}
+
+body {
+	background-color: #f5f5f5 !important;
+}

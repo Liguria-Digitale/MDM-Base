@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="sign:model" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+   <description>Sign Model</description>
+   <author>Maw</author>
+   <version>1.0</version>
+
+   <imports>
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+   </imports>
+
+   <namespaces>
+      <namespace uri="http://www.sign.org/model/dictionary/1.0" prefix="sign"/>
+   </namespaces>
+    
+   <aspects>
+      <aspect name="sign:signed">
+         <title>Firmato</title>
+      </aspect>
+      
+      <aspect name="sign:marked">
+         <title>Marcato</title>
+      </aspect>
+      
+      <aspect name="sign:ispdfa">
+         <title>IsPdfa</title>
+      </aspect>
+   </aspects>
+
+</model>

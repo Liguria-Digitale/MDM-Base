@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="doc:model" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+	<description>Document Model</description>
+	<author></author>
+	<version>1.0</version>
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.doc.it/model/org/1.0" prefix="doc" />
+	</namespaces>
+
+	<aspects>
+		<aspect name="doc:base">
+			<title>Doc base type</title>
+			<properties>
+				<!-- proprietà per evitare la modifica dei metadati da interfaccia web -->
+				<property name="doc:lock">
+					<title>Lock Metadata</title>
+					<type>d:boolean</type>
+					<default>false</default>
+				</property>
+				<!-- ### proprietà minime del documento digitale ### -->
+				<!-- Id univoco del documento nel sistema -->
+				<property name="doc:id">
+					<title>IDDocumento</title>
+					<type>d:text</type>
+				</property>
+				<!-- Data chiusura del documento -->
+				<property name="doc:dataChiusura">
+					<title>Data Chiusura</title>
+					<type>d:datetime</type>
+				</property>
+				<!-- Oggetto del documento -->
+				<property name="doc:oggetto">
+					<title>Oggetto</title>
+					<type>d:text</type>
+				</property>
+				<!-- Nome/Cognome o Ragione sociale del soggetto -->
+				<property name="doc:soggetto">
+					<title>Nome Soggetto</title>
+					<type>d:text</type>
+				</property>
+				<!-- CF/PIVA del soggetto -->
+				<property name="doc:soggettoId">
+					<title>ID Soggetto</title>
+					<type>d:text</type>
+				</property>
+				<!-- Nome/Cognome o Ragione sociale del destinatario -->
+				<property name="doc:destinatario">
+					<title>Nome Destinatario</title>
+					<type>d:text</type>
+				</property>
+				<!-- CF/PIVA del destinatario -->
+				<property name="doc:destinatarioId">
+					<title>ID Destinatario</title>
+					<type>d:text</type>
+				</property>
+			</properties>
+		</aspect>
+
+		<aspect name="doc:generic">
+			<title>Documento Generico</title>
+			<parent>doc:base</parent>
+		</aspect>
+
+	</aspects>
+	
+</model>

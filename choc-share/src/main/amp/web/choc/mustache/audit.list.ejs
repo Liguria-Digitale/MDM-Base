@@ -1,0 +1,16 @@
+<thead>
+	<tr><th>Utente</th><th>Data</th><th>Evento</th><th>Dettagli</th></tr>
+</thead>
+<tbody>
+	<% for(var e in events){ var event = events[e], dateSplit = event.date.split("."); %>
+	<tr class="wfm-row">
+		<td><%= event.user %></td>
+		<td><%= dateSplit[0]+" "+dateSplit[1]+" "+dateSplit[2] %></td>
+		<td><%= event.action %></td>
+		<td><% for(var p in event.params){ var param = event.params[p].split("|"); %>
+				<b><%= param[0] %>:</b> <%= param[1] %><br>
+			<% } %>
+		</td>
+	</tr>
+	<% } %>
+</tbody>

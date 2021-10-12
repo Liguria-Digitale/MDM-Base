@@ -1,0 +1,54 @@
+<!--
+
+                            ***********************************
+                                   Share build script  
+                            ***********************************
+    
+    Author: Federico Tarantino
+
+-->
+<project basedir="." default="hotcopy-tomcat-zip" name="choc-share">
+
+	<!-- ############ CONFIGURA LA HOME DEL TUO TOMCAT ########### -->
+	<property name="tomcat.home" value="/home/lod/alfresco-community-201707-RIUSO/tomcat" />
+   
+   <!-- Property default values. May be overridden using above files or via command-line args -->	
+    <property name="config.includes" value="**/*.*" />
+    <property name="config.excludes" value="" />
+    <property name="build.res.includes" value="**/*.*" />
+    <property name="build.res.excludes" value="" />
+	
+	<!-- Default properties -->
+    <property name="webapp.share.path" value="/share" />
+   
+   <!-- Additional property values. Generally should not be overridden -->
+    <property name="res.dir" value="${basedir}/src/main/amp/web" />
+    <property name="res.dir.webinf" value="${basedir}/src/main/amp/config/alfresco" />
+	<property name="target.dir" value="${basedir}/target" />
+    <property name="build.dir" value="${basedir}/target/build" />	
+    
+    <target name="build-zip-tomcat" depends="build-zip-prepare"
+      description="Assemble the configuration and resource files for a Tomcat deployment structure">
+      <!-- Copy web assets -->
+        <copy todir="${build.dir}/webapps/share">
+            <fileset dir="${res.dir}" />
+        </copy>
+          
+    	<copy todir="${build.dir}/webapps/share/WEB-INF/classes/alfresco">
+            <fileset dir="${res.dir.webinf}" />
+        </copy>
+    </target>
+
+    <target name="build-zip-prepare">
+    	<delete dir="${target.dir}" />
+    	<mkdir dir="${build.dir}/webapps/share/WEB-INF/classes/alfresco" />
+    </target>
+    
+	<!-- hotcopy to tomcat -->
+    <target name="hotcopy-tomcat-zip" depends="build-zip-tomcat" description="Hotcopy files into the Tomcat folder">
+        <copy todir="${tomcat.home}" includeEmptyDirs="false">
+            <fileset dir="${build.dir}" />
+        </copy>
+    </target>
+   
+</project>

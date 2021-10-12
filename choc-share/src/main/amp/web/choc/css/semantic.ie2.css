@@ -1,0 +1,180 @@
+@IMPORT url("components/popup.min.css");
+@IMPORT url("components/progress.min.css");
+@IMPORT url("components/rail.min.css");
+@IMPORT url("components/rating.min.css");
+@IMPORT url("components/reset.min.css");
+@IMPORT url("components/reveal.min.css");
+@IMPORT url("components/search.min.css");
+@IMPORT url("components/segment.min.css");
+@IMPORT url("components/shape.min.css");
+@IMPORT url("components/sidebar.min.css");
+@IMPORT url("components/site.min.css");
+@IMPORT url("components/statistic.min.css");
+@IMPORT url("components/step.min.css");
+@IMPORT url("components/sticky.min.css");
+@IMPORT url("components/tab.min.css");
+@IMPORT url("components/table.min.css");
+@IMPORT url("components/transition.min.css");
+@IMPORT url("components/video.min.css");
+
+/* ie9-fixes.css */
+.dropdown.item.ui.visible > .menu,
+.dropdown.button.ui.visible > .menu,
+.dropdown.selection.ui.visible > .menu {
+   display: block !important;
+   visibility: visible !important;
+}
+
+.ui.text.vertical.menu{
+    display:inline-block !important;
+}
+.ui.grid, .ui.form{
+    position: relative;
+    width: 100% !important;
+}
+
+.grid.column.ui > [class*='sixteen wide'].column, .grid.ui > .row.column > [class*='sixteen wide'].column, .grid.ui > .row > [class*='sixteen wide'].column, .grid.ui > [class*='sixteen wide'].column{
+    width: 100% !important;
+}
+.grid.column.ui > [class*='fifteen wide'].column, .grid.ui > .row.column > [class*='fifteen wide'].column, .grid.ui > .row > [class*='fifteen wide'].column, .grid.ui > [class*='fifteen wide'].column, .form.ui .field.wide.fifteen{
+    width: 93% !important;
+}
+.grid.column.ui > [class*='fourteen wide'].column, .grid.ui > .row.column > [class*='fourteen wide'].column, .grid.ui > .row > [class*='fourteen wide'].column, .grid.ui > [class*='fourteen wide'].column, .form.ui .field.wide.fourteen{
+    width: 87% !important;
+}
+.grid.column.ui > [class*='thirteen wide'].column, .grid.ui > .row.column > [class*='thirteen wide'].column, .grid.ui > .row > [class*='thirteen wide'].column, .grid.ui > [class*='thirteen wide'].column, .form.ui .field.wide.thirteen{
+    width: 81% !important;
+}
+.grid.column.ui > [class*='twelve wide'].column, .grid.ui > .row.column > [class*='twelve wide'].column, .grid.ui > .row > [class*='twelve wide'].column, .grid.ui > [class*='twelve wide'].column, .form.ui .field.wide.twelve{
+    width: 75% !important;
+}
+.grid.column.ui > [class*='eleven wide'].column, .grid.ui > .row.column > [class*='eleven wide'].column, .grid.ui > .row > [class*='eleven wide'].column, .grid.ui > [class*='eleven wide'].column, .form.ui .field.wide.eleven{
+    width: 68% !important;
+}
+.grid.column.ui > [class*='ten wide'].column, .grid.ui > .row.column > [class*='ten wide'].column, .grid.ui > .row > [class*='ten wide'].column, .grid.ui > [class*='ten wide'].column, .form.ui .field.wide.ten{
+    width: 62% !important;
+}
+.grid.column.ui > [class*='nine wide'].column, .grid.ui > .row.column > [class*='nine wide'].column, .grid.ui > .row > [class*='nine wide'].column, .grid.ui > [class*='nine wide'].column, .form.ui .field.wide.nine{
+    width: 56% !important;
+}
+.grid.column.ui > [class*='eight wide'].column, .grid.ui > .row.column > [class*='eight wide'].column, .grid.ui > .row > [class*='eight wide'].column, .grid.ui > [class*='eight wide'].column, .form.ui .field.wide.eight{
+    width: 50% !important;
+}
+.grid.column.ui > [class*='seven wide'].column, .grid.ui > .row.column > [class*='seven wide'].column, .grid.ui > .row > [class*='seven wide'].column, .grid.ui > [class*='seven wide'].column, .form.ui .field.wide.seven{
+    width: 43% !important;
+}
+.grid.column.ui > [class*='six wide'].column, .grid.ui > .row.column > [class*='six wide'].column, .grid.ui > .row > [class*='six wide'].column, .grid.ui > [class*='six wide'].column, .form.ui .field.wide.six{
+    width: 37% !important;
+}
+.grid.column.ui > [class*='five wide'].column, .grid.ui > .row.column > [class*='five wide'].column, .grid.ui > .row > [class*='five wide'].column, .grid.ui > [class*='five wide'].column, .form.ui .field.wide.five{
+    width: 31% !important;
+}
+.grid.column.ui > [class*='four wide'].column, .grid.ui > .row.column > [class*='four wide'].column, .grid.ui > .row > [class*='four wide'].column, .grid.ui > [class*='four wide'].column, .form.ui .field.wide.four{
+    width: 25% !important;
+}
+.grid.column.ui > [class*='three wide'].column, .grid.ui > .row.column > [class*='three wide'].column, .grid.ui > .row > [class*='three wide'].column, .grid.ui > [class*='three wide'].column, .form.ui .field.wide.three{
+    width: 18.75% !important;
+}
+.grid.column.ui > [class*='two wide'].column, .grid.ui > .row.column > [class*='two wide'].column, .grid.ui > .row > [class*='two wide'].column, .grid.ui > [class*='two wide'].column, .form.ui .field.wide.two{
+    width: 12.5% !important;
+}
+
+.form.ui .fields.sixteen > .field{
+    width: 6%;
+}
+.form.ui .fields.fifteen > .field{
+    width: 6.5%;
+}
+.form.ui .fields.fourteen > .field{
+    width: 7%;
+}
+.form.ui .fields.thirteen > .field{
+    width: 7.6%;
+}
+.form.ui .fields.twelve > .field{
+    width: 8.3%;
+}
+.form.ui .fields.eleven > .field{
+    width: 9%;
+}
+.form.ui .fields.ten > .field{
+    width: 10%;
+}
+.form.ui .fields.nine > .field{
+    width: 11.1%;
+}
+.form.ui .fields.eight > .field{
+    width: 12.5%;
+}
+.form.ui .fields.seven > .field{
+    width: 14.2%;
+}
+.form.ui .fields.six > .field{
+    width: 16.6%;
+}
+.form.ui .fields.five > .field{
+    width: 20%;
+}
+.form.ui .fields.four > .field{
+    width: 25%;
+}
+.form.ui .fields.three > .field{
+    width: 33%;
+}
+.form.ui .fields.two > .field{
+    width: 50%;
+}
+.form.ui .fields > .field{
+    width: 100%;
+}
+
+.choc-service-general-search input, .choc-service-adb-search input{
+    max-width: 87% !important;
+    min-width: 250px !important;
+}
+
+/* TITOLARIO */
+#tit-doclib{
+    width: 100%;
+}
+.ui.pagination.menu > *, #choc-topmenu > *, .right.menu.user_sub_container > *, .fields > .field{
+    display: inline !important;
+}
+.right.menu.user_sub_container{
+    float: right;
+}
+
+.ui.equal.width.grid > .column{
+    width: 87% !important;
+}
+
+.choc-service-form-column, .right.floated{
+    float:right;
+}
+.choc-container.choc-titolario #tit-advsearch-q{
+    width: 70% !important;
+}
+.choc-container.choc-titolario #fileupload{
+    width: 100%;
+}
+
+/* AUDIT */
+.choc-container.choc-audit #audit-filter{
+    width: 73% !important;
+}
+
+/* ORGANIGRAMMA */
+.choc-container.choc-org #org-user-q{
+    width: 100% !important;
+}
+#choc-uo-create{
+    width: 80% !important;
+}
+
+/* SERVICES */
+.choc-service{
+    width: 65% !important;
+}
+.choc-service #choc-role-namenew{
+    width: 75% !important;
+}

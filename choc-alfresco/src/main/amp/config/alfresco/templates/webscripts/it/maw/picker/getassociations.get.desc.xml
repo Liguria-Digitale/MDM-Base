@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocGetAssociations</shortname>
+	<description>chocGetAssociations only target</description>
+	<url>/choc/picker/getassociations</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

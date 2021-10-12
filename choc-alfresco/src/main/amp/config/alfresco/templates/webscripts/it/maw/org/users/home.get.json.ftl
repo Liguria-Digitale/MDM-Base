@@ -1,0 +1,1 @@
+{"home":"${home.nodeRef.toString()}","userref":"${person.nodeRef.toString()}"}

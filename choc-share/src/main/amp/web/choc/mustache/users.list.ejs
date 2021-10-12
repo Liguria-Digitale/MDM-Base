@@ -1,0 +1,22 @@
+<% if(!$.isEmptyObject(users)){  %>
+<thead><tr><th>Username</th><th>Nome</th><th>Cognome</th><th>Email</th><th></th></tr></thead>
+<tbody>
+	<% for(var u in users){ var user = users[u]; %>
+	<tr>
+		<td><%= user.username %></td>
+		<td><%= user.name %></td>
+		<td><%= user.surname %></td>
+		<td><%= user.mail %></td>
+		<td data-username='<%= user.username %>'>
+			<button onclick='Choc._editUser(this);' class='ui small blue icon button'><i class='icon edit'></i>Modifica</button>
+			<% if(Choc.user.id!=user.username){ %>
+			<button onclick='Choc._resetUserPw(this);' class='ui small blue icon button'><i class='icon key'></i>Reset Password</button>
+			<button onclick='Choc._deleteUser(this);' class='ui small red icon button'><i class='icon remove'></i>Elimina</button>
+			<% } %>
+		</td>
+	</tr>
+	<% } %>
+</tbody>
+<% } else { %>
+<tr><td>Nessun utente corrisponde alla tua ricerca...</td></tr>
+<% } %>

@@ -1,0 +1,50 @@
+<div class="ui divided grid" id="users-section" data-value="users" style="margin-top: -1rem">
+    <div class="nine wide column">
+        <div class="ui header">Utenti in questa UO</div>
+        <% if (uo.users.length > 0){ %>
+        <div class="ui list">
+            <%
+                // ordine per cognome gli utenti
+                uo.users.sort(function (a, b) {
+                    return a.lastname < b.lastname ? -1 : 1;
+                });
+            %>
+            <% for (var u in uo.users) {
+                var user = uo.users[u];
+                var iconuser = "user";
+                var coloruser = "blue";
+                if (user.leader) {
+                    iconuser = "spy";
+                    coloruser = "orange";
+                } %>
+            <div class='item' data-username='<%= user.username %>'>
+                <div class='ui <%= coloruser %> label'><i class='icon <%= iconuser %>'></i><%= user.name %>
+                    <% if (user.leader) { %>
+                    <i onclick='Choc.Picker.code.picker._removeUser(this, true);' class='delete icon' tabindex='0'></i>
+                    <% }else{ %>
+                    <i onclick='Choc.Picker.code.picker._removeUser(this, false);' class='delete icon' tabindex='0'></i>
+                    <% } %>
+                    <% if(user.leader){ %>
+                    <div style='margin-left: 0.4em;' onclick='Choc.Picker.code.picker._removeLeader(this);' tabindex='0' class='detail cursor pointer'><i class='icons'><i class='trophy black icon'></i><i class='large red dont icon'></i></i>
+                    </div>
+                    <% }else{ %>
+                    <div style='margin-left: 0.4em;' onclick='Choc.Picker.code.picker._electLeader(this);' tabindex='0' class='detail cursor pointer'><i class='trophy icon'></i></div>
+                    <% } %>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        <% }else{ %>
+        <div class="ui message">
+            Non sono presenti utenti associati.
+        </div>
+        <% } %>
+    </div>
+    <div class="seven wide column">
+        <div class="ui fluid icon input">
+            <input type="text" placeholder="Cerca utenti..." id="org-user-q" onkeydown="Choc.Picker.code.picker._searchUsersOrg(event);" aria-label="Cerca utenti">
+            <i class="search icon cursor pointer" onclick="Choc.Picker.code.picker._searchUsersOrg();"></i>
+        </div>
+        <div class="ui divided list" id="org-users-result"></div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+	<id>users</id>
+	<template-instance>users-instance</template-instance>
+	<authentication>user</authentication>
+	<components>
+		<component>
+			<region-id>users</region-id>
+			<url>/choc/page/users</url>
+		</component>
+    </components>
+</page>

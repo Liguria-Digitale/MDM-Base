@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUoRemoveuser</shortname>
+	<description>chocOrgUoRemoveuser</description>
+	<url>/choc/org/uo/removeuser</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

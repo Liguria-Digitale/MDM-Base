@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+	<id>editor</id>
+	<template-instance>editor-instance</template-instance>
+	<authentication>user</authentication>
+	<components>
+		<component>
+			<region-id>editor</region-id>
+			<url>/choc/page/editor</url>
+		</component>
+    </components>
+</page>

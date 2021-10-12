@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="audit:model" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+	<description>audit model</description>
+	<author>Luigi Romano</author>
+	<version>1.0</version>
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"></import>
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"></import>
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.reg.it/model/audit/1.0" prefix="audit"></namespace>
+	</namespaces>
+
+	<types>
+		
+		<type name="audit:auditEntity">
+			<title>Audit Entity</title>
+			<description>Audit Document</description>
+			<parent>cm:content</parent>
+			<properties>
+				<!-- utente che esegue l'azione -->
+				<property name="audit:userOwner">
+					<title>User Owner of this action</title>
+					<type>d:text</type>
+				</property>
+				<!-- sito in cui si esegue l'azione -->
+				<property name="audit:site">
+					<title>Site</title>
+					<type>d:text</type>
+				</property>
+				<!-- display name per il tipo di azione -->
+				<property name="audit:action">
+					<title>Action</title>
+					<type>d:text</type>
+				</property>
+				<!-- data in cui si esegue l'azione -->
+				<property name="audit:date">
+					<title>Action's Date</title>
+					<type>d:date</type>
+				</property>
+				<!-- nodo su cui si esegue l'azione -->
+				<property name="audit:referenceNodeRef">
+					<title>Reference's NodeRef</title>
+					<type>d:text</type>
+				</property>
+				<!-- nome del nodo su cui si esegue l'azione -->
+				<property name="audit:referenceName">
+					<title>Reference's Name</title>
+					<type>d:text</type>
+				</property>
+				<!-- tipo di azione: TITOLARIO -->
+				<property name="audit:referenceType">
+					<title>Reference's Type</title>
+					<type>d:text</type>
+				</property>
+				<!-- parametri generici customizzabili -->
+				<property name="audit:params">
+					<title>Generic Params</title>
+					<type>d:text</type>
+					<mandatory>false</mandatory>
+					<multiple>true</multiple>					
+				</property>																						
+			</properties>
+		</type>
+
+	</types>
+	
+</model>

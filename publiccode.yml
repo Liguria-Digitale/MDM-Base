@@ -1,0 +1,52 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '1.0'
+name: MDM Base
+url: 'https://github.com/Liguria-Digitale/MDM-Base'
+releaseDate: '2021-10-12'
+logo: LiguriaDigitale.png
+developmentStatus: stable
+softwareType: standalone/web
+platforms:
+  - web
+categories:
+  - document-management
+  - workflow-management
+maintenance:
+  type: internal
+  contacts:
+    - name: Carlo Ortona
+      email: c.ortona@liguriadigitale.it
+      affiliation: Liguria Digitale
+legal:
+  license: EUPL-1.2
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - it
+it:
+  riuso:
+    codiceIPA: data
+  conforme:
+    modelloInteroperabilita: false
+    misureMinimeSicurezza: true
+    gdpr: true
+    spid: true
+    cie: true
+description:
+  it:
+    genericName: MDM_Base
+    shortDescription: MDM Base
+    longDescription: >
+     La soluzione offre una suite per la gestione documentale di Base. Su tale suite è possibile agganciare ulteriori moduli per coprire specifici servizi verticali come
+     il protocollo informatico, la gestione delle PEC, etc. Mette a disposizione tutte le funzionalità di base di un repository documentale tra cui versioning,
+     check-in/ckeck-out e strumenti per l'organizzazione dell'archivio. Il sistema garantisce una alta granularità in termini di gestione dei permessi 
+     e delle visibilità su documenti e cartelle. Sfrutta le carattteristiche dell'ECM sottostante (Alfresco) per ricerche su metadati e full-text (Solr) o per la
+     gstione dei processi documentali (Activiti).     
+    features:
+      - Funzionalità documentali
+      - Ricerche full-text
+      - Integrazione con MS Office
+      - Architettura SOA basata su WS di tipo REST

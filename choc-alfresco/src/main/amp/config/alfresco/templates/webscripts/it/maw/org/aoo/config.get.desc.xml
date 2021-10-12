@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgAooConfig</shortname>
+	<description>chocOrgAooConfig</description>
+	<url>/choc/org/aoo/config</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

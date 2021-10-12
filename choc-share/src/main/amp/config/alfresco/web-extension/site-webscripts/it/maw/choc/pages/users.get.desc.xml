@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>choc-users</shortname>
+  <description>Users</description>
+  <url>/choc/page/users</url>
+</webscript>

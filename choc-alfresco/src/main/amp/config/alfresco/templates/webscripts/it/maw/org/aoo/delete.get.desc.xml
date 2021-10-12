@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgAooDelete</shortname>
+	<description>chocOrgAooDelete</description>
+	<url>/choc/org/aoo/delete</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>

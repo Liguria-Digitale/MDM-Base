@@ -1,0 +1,13 @@
+<% if($.isEmptyObject(nodes)){ %>
+	<div class='item' data-i18n="[append]desktop:docs.nothing"></div>
+<% } else { %>
+<% for(var n in nodes){ var node = nodes[n], name = node.properties["cm:name"]; %>
+<div class="item" data-noderef="<%= n %>">
+	<a class="ui right floated tiny icon button" href="titolario?noderef=<%= n %>"><i class="chevron right icon"></i></a>
+	<div class="content">
+		<a onclick="Choc.Picker.showPreview({noderef:'<%= n %>'});" class="description"><%== Choc.Docs.icon(name)+name %></a>
+		<div class="extra" data-i18n="[append]desktop:docs.from"> <i><%= node.properties["cm:creator"].displayName %></i> il <%= Choc.formatIsoDateWithoutHour(node.properties["cm:created"]) %></div>
+	</div>
+</div>
+<% } %>
+<% } %>

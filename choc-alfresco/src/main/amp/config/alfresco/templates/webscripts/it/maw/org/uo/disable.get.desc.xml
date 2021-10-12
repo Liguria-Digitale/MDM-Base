@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>chocOrgUoDisable</shortname>
+	<description>chocOrgUoDisable</description>
+	<url>/choc/org/uo/disable</url>
+	<authentication>user</authentication>
+	<format default="json">argument</format>
+</webscript>
