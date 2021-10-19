@@ -22,6 +22,7 @@ maintenance:
       affiliation: Liguria Digitale
 legal:
   license: EUPL-1.2
+  mainCopyrightOwner: Liguria Digitale
 localisation:
   localisationReady: false
   availableLanguages:
@@ -33,8 +34,11 @@ it:
     modelloInteroperabilita: false
     misureMinimeSicurezza: true
     gdpr: true
-    spid: true
+  piattaforme:
+    anpr: false
     cie: true
+    pagopa: false
+    spid: true
 description:
   it:
     genericName: MDM_Base
