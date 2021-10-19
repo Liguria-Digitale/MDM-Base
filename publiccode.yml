@@ -1,7 +1,6 @@
 # This repository adheres to the publiccode.yml standard by including this 
 # metadata file that makes public software easily discoverable.
 # More info at https://github.com/italia/publiccode.yml
-
 publiccodeYmlVersion: '0.2'
 name: MDM Base
 url: 'https://github.com/Liguria-Digitale/MDM-Base'
@@ -18,7 +17,7 @@ maintenance:
   type: internal
   contacts:
     - name: Carlo Ortona
-      email: c.ortona@liguriadigitale.it
+      email: riuso@liguriadigitale.it
       affiliation: Liguria Digitale
 legal:
   license: EUPL-1.2
@@ -31,7 +30,7 @@ it:
   riuso:
     codiceIPA: data
   conforme:
-    modelloInteroperabilita: false
+    modelloInteroperabilita: true
     misureMinimeSicurezza: true
     gdpr: true
   piattaforme:
