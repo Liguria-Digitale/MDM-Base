@@ -13,31 +13,6 @@ platforms:
 categories:
   - document-management
   - workflow-management
-dependsOn:
-  open:
-    - name: Alfresco ECM
-      optional: false
-      version: ''
-      versionMax: ''
-      versionMin: '4.2'
-  open:
-    - name: Tesseract
-      optional: false
-      version: ''
-      versionMax: ''
-      versionMin: '4.1'
-  open:
-    - name: Qpdf
-      optional: false
-      version: ''
-      versionMax: ''
-      versionMin: '5.0'
-  open:
-    - name: WKHTMLTOPDF
-      optional: false
-      version: ''
-      versionMax: ''
-      versionMin: '0.12'
 maintenance:
   type: internal
   contacts:
