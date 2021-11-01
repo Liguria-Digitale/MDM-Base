@@ -49,7 +49,7 @@ localisation:
     - it
   localisationReady: false
 logo: |-
-  https://raw.githubusercontent.com/Liguria-Digitale/Protocollo-e-Documentale/master/LiguriaDigitale.png
+  LiguriaDigitale.png
 maintenance:
   contacts:
     - affiliation: Liguria Digitale
